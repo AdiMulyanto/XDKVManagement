@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="X DKV Contek Mencontek">
+    <title>XDKV-Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="brand">XDKV<span>Management</span></h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Tentang</a></li>
+                <li><a href="#tasks">Tugas</a></li>
+                <li><a href="#admin">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>X DKV - Task Manager</h1>
+            <p>Selamat datang di website percontekan lokal</p>
+            <a href="#tasks" class="btn-primary">Lihat List Tugas</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Introduction</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Tujuan</h3>
+                    <p>Tujuan Website ini adalah untuk orang dikelas <strong>X DKV</strong> yang lupa atas Tugas yang wajib di kerjakan.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Foundation</h3>
+                    <p>Website ini di dirikan <b>XDKV-Boys</b> dan di deploy oleh <em><strong>Adi Mulyanto</strong></em></XDKV-Boys></p>
+                </div>
+                <div class="feature-item">
+                    <h3>BUG</h3>
+                    <p>Ketika kamu menemukan suatu masalah silahkan hubungi <strong>Adi Mulyanto</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Task List Section -->
+<section id="tasks" class="tasks">
+    <div class="container">
+        <h2>Tugas</h2>
+        <ul id="taskList" class="task-list"></ul>
+    </div>
+</section>
+
+<!-- Admin Section -->
+<section id="admin" class="admin">
+    <div class="container">
+        <h2>Admin Panel</h2>
+        
+        <!-- Admin Panel for Adding Task -->
+        <div id="adminPanel" class="admin-panel">
+            <input type="text" id="newTaskTitle" placeholder="Task Title" />
+            <textarea id="newTaskDesc" placeholder="Task Description"></textarea>
+            <button onclick="addTask()" class="btn-primary">Add Task</button>
+        </div>
+
+        <!-- Admin Login -->
+        <div id="loginPanel" class="login-panel">
+            <h2>Admin Login</h2>
+            <input type="text" id="username" placeholder="Username" />
+            <input type="password" id="password" placeholder="Password" />
+            <button onclick="login()" class="btn-primary">Login</button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Task Detail -->
+<div id="taskModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="modalTaskTitle">Judul</h3>
+        <p id="modalTaskDesc">Description</p>
+        <p id="modalTaskDate">Di Buat: Date</p>
+        <p>Status: <span id="modalTaskStatus"></span></p>
+        
+        <!-- Edit form for Admin -->
+        <div id="modalAdminEdit" class="admin-edit">
+            <textarea id="editTaskDesc" placeholder="Edit Task Description"></textarea>
+            <select id="editTaskStatus">
+                <option value="Sedang Dikerjakan">Sedang Dikerjakan</option>
+                <option value="Selesai">Selesai</option>
+            </select>
+            <button onclick="saveTaskChanges()">Save Changes</button>
+            <button onclick="deleteTask()">Delete Task</button> <!-- Add Delete Button -->
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
